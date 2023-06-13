@@ -13,8 +13,8 @@ class Window(tk.Tk):
         print(s.theme_names())
         print(s.theme_use())
         s.theme_use('clam')
-        s.configure('TLabel', foreground='blue',background='yellow')
-        title_label = ttk.Label(self, text="LED控制器", font=("Helvetica", "16"))
+        s.configure('Title.TLabel', foreground='blue',background='yellow',font=("Helvetica", "16"))
+        title_label = ttk.Label(self, text="LED控制器",style='Title.TLabel')
         print(title_label.winfo_class())
         
         title_label.pack(pady=25, padx=100)
