@@ -16,7 +16,7 @@ class LEDButton(ttk.Button):
         s.configure('LEDOpen.TButton', foreground='blue',background='yellow',font=("Arial", 16),borderwidth=5,padding=(10,20))
         
     def user_click(self):
-        print(self.state)
+        # print(self.state)
         self.state = not self.state
         if self.state:
             self.configure(text='LED 關')
@@ -45,10 +45,10 @@ class Window(tk.Tk):
         s.configure('Title.TLabel',font=("Helvetica", "16"))
         
         title_label = ttk.Label(self, text="LED控制器",style='Title.TLabel')
-        print(title_label.winfo_class())
+        # print(title_label.winfo_class())
         
         title_label.pack(pady=25, padx=100)
-        print(s.layout('TButton'))
+        # print(s.layout('TButton'))
         
         self.led_btn = LEDButton(
         self,led=redLed,text="LED 開",style='LEDClose.TButton')
