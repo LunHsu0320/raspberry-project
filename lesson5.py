@@ -15,27 +15,58 @@ red = GPIO.PWM(22, 255)
 i = 0
 
 
+# try:
+#     while True:
+#         if i < 100:
+#             i += 10
+#         else:
+#             i = 10
+#         blue.start(i)  # start blue led
+#         sleep(0.05)
+#         blue.stop()
+#         sleep(0.05)
+#         print(i)
+#         green.start(i)  # start green led
+#         sleep(0.05)
+#         green.stop()
+#         sleep(0.05)
+#         print(i)
+#         red.start(i)  # start red led
+#         sleep(0.05)
+#         red.stop()
+#         sleep(0.05)
+#         print(i)
+# except KeyboardInterrupt:
+#     blue.stop()
+#     red.stop()
+#     green.stop()
+#     GPIO.cleanup()  # clean up GPIO on CTRL+C exit
+#     print("END")
+    
 try:
     while True:
-        if i < 100:
-            i += 10
-        else:
-            i = 10
-        blue.start(i)  # start blue led
-        sleep(0.05)
-        blue.stop()
-        sleep(0.05)
-        print(i)
-        green.start(i)  # start green led
-        sleep(0.05)
-        green.stop()
-        sleep(0.05)
-        print(i)
-        red.start(i)  # start red led
-        sleep(0.05)
+        # if i < 100:
+        #     i += 10
+        # else:
+        #     i = 10
+        # blue.start(i)  # start blue led
+        # red.start(i)
+        # sleep(0.05)
+        # blue.stop()
+        # red.stop()
+        # sleep(0.05)
+        # print(i)
+        
+        red.start(100)
+        green.start(1)
+        blue.start(1)  # start blue led        
+        sleep(1)
         red.stop()
-        sleep(0.05)
+        green.stop()
+        blue.stop()        
+        sleep(1)
         print(i)
+        
 except KeyboardInterrupt:
     blue.stop()
     red.stop()
