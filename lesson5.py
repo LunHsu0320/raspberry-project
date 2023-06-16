@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 import rgbLed
-from time import sleep
-import RPi.GPIO as GPIO
 
 if __name__ == "__main__":
     rgb = rgbLed.RGBLed(22,27,17)
-    rgb.redlight(forever= True)    
+    rgb.redLight(second=1)
+    rgb.greenLight(second=1)
+    rgb.blueLight(second=1)    
+    rgb.clean()
     
