@@ -1,6 +1,7 @@
 import gpiozero as zero 
 import RPi.GPIO as GPIO
 from time import sleep
+from datetime import datetime
 import requests
 
 if __name__ == "__main__":
@@ -14,9 +15,12 @@ if __name__ == "__main__":
                 print("光線亮")
             else:
                 print("光線暗")    
+                
+            datetimeStr = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            
             print("LM35",mcp3008_ch6.value*100*3.3)    
             
-            response = requests.get("https://lunhsu0320-urban-space-guide-rj4w79rpjgjf479-8000.preview.app.github.dev/raspberry/?light={value}&temprature={mcp3008_ch6.value}")
+            response = requests.get("https://lunhsu0320-urban-space-guide-rj4w79rpjgjf479-8000.preview.app.github.dev/raspberry?time={datetimeStr}&light={value}&temprature={mcp3008_ch6.value}")
             
             if response.ok:
                 print("update")
